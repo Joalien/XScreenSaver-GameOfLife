@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="XScreenSaver"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/users/josquin/INFO/C/XScreenSaver"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/users/josquin/INFO/C/XScreenSaver"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GameOfLife">
+				<Option output="/users/josquin/INFO/C/XScreenSaver/GameOfLife" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/josquin/INFO/C/XScreenSaver"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 GameOfLife"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GameOfLife/fast">
+				<Option output="/users/josquin/INFO/C/XScreenSaver/GameOfLife" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/josquin/INFO/C/XScreenSaver"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 GameOfLife/fast"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/users/josquin/INFO/C/XScreenSaver"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/C/XScreenSaver/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/users/josquin/INFO/C/XScreenSaver/GameOfLife.c">
+			<Option target="GameOfLife"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/C/XScreenSaver/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
