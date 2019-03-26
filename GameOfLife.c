@@ -249,7 +249,7 @@ int main (int argc, char *argv[]) {
 
     /** HYPERPARAMETERS **/
     int zoom = (int) (rand() / (double)RAND_MAX * 16);
-    #define ZOOM zoom //assert ZOOM != 0
+    #define ZOOM zoom==0?1:zoom //assert ZOOM != 0
     #define NCOLORS 2
     #define NOISE 300//10 //assert NOISE != -1
     #define MEMORY 600
@@ -356,8 +356,7 @@ int main (int argc, char *argv[]) {
         }
 
         grid = updateGrid(grid, memoryGrid, height, width, NOISE, MEMORY);
-            if(HALF_STEP == 1) grid = updateGrid(grid, memoryGrid, height, width, NOISE, MEMORY);
-//        my_sleep(TIME);
+        if(HALF_STEP == 1) grid = updateGrid(grid, memoryGrid, height, width, NOISE, MEMORY);
 
         /* copy the buffer to the window */
         XCopyArea(dpy, double_buffer, window, gColors[1],0, 0, (unsigned int) wa.width, (unsigned int) wa.height, 0, 0);
