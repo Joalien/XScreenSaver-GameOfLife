@@ -8,48 +8,52 @@
 
 #include "vroot.h"
 
-void my_sleep(int milliseconds){
-    struct timespec ts;
-    ts.tv_sec = milliseconds / 1000;
-    ts.tv_nsec = (milliseconds % 1000) * 1000000;
-    nanosleep(&ts, NULL);
-}
-
 int8_t ** addPentominoR(int8_t **grid, int height, int width, int y, int x){
+    
+    int randx = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+    int randy = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
 
     grid[y][x] = 1;
-    grid[y][(x+1)%width] = 1;
-    grid[(y+1)%height][(x+1)%width] = 1;
-    grid[(y+2)%height][(x+1)%width] = 1;
-    grid[(y+1)%height][(x+2)%width] = 1;
+    grid[y][(x+1*randx)%width] = 1;
+    grid[(y+1*randy)%height][(x+1*randx)%width] = 1;
+    grid[(y+2*randy)%height][(x+1*randx)%width] = 1;
+    grid[(y+1*randy)%height][(x+2*randx)%width] = 1;
 
     return grid;
 }
 
 int8_t ** addGland(int8_t **grid, int height, int width, int y, int x){
 
-    grid[(y+2)%height][(x+0)%width] = 1;
-    grid[(y+0)%height][(x+1)%width] = 1;
-    grid[(y+2)%height][(x+1)%width] = 1;
-    grid[(y+1)%height][(x+3)%width] = 1;
-    grid[(y+2)%height][(x+4)%width] = 1;
-    grid[(y+2)%height][(x+5)%width] = 1;
-    grid[(y+2)%height][(x+6)%width] = 1;
+    
+    int randx = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+    int randy = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+
+    grid[(y+2*randy)%height][(x)%width] = 1;
+    grid[(y)%height][(x+1*randx)%width] = 1;
+    grid[(y+2*randy)%height][(x+1*randx)%width] = 1;
+    grid[(y+1*randy)%height][(x+3*randx)%width] = 1;
+    grid[(y+2*randy)%height][(x+4*randx)%width] = 1;
+    grid[(y+2*randy)%height][(x+5*randx)%width] = 1;
+    grid[(y+2*randy)%height][(x+6*randx)%width] = 1;
 
     return grid;
 }
 
 int8_t ** addLapins(int8_t **grid, int height, int width, int y, int x){
 
-    grid[(y+1)%height][(x+0)%width] = 1;
-    grid[(y+2)%height][(x+1)%width] = 1;
-    grid[(y+3)%height][(x+1)%width] = 1;
-    grid[(y+1)%height][(x+2)%width] = 1;
-    grid[(y+0)%height][(x+4)%width] = 1;
-    grid[(y+1)%height][(x+5)%width] = 1;
-    grid[(y+2)%height][(x+5)%width] = 1;
-    grid[(y+0)%height][(x+6)%width] = 1;
-    grid[(y+3)%height][(x+7)%width] = 1;
+    
+    int randx = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+    int randy = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+
+    grid[(y+1*randy)%height][(x)%width] = 1;
+    grid[(y+2*randy)%height][(x+1*randx)%width] = 1;
+    grid[(y+3*randy)%height][(x+1*randx)%width] = 1;
+    grid[(y+1*randy)%height][(x+2*randx)%width] = 1;
+    grid[(y)%height][(x+4*randx)%width] = 1;
+    grid[(y+1*randy)%height][(x+5*randx)%width] = 1;
+    grid[(y+2*randy)%height][(x+5*randx)%width] = 1;
+    grid[(y)%height][(x+6*randx)%width] = 1;
+    grid[(y+3*randy)%height][(x+7*randx)%width] = 1;
 
 
     return grid;
@@ -57,14 +61,18 @@ int8_t ** addLapins(int8_t **grid, int height, int width, int y, int x){
 
 int8_t ** addPuffer1(int8_t **grid, int height, int width, int y, int x){
 
-    grid[(y+1)%height][(x+0)%width] = 1;
-    grid[(y+3)%height][(x+0)%width] = 1;
-    grid[(y+0)%height][(x+1)%width] = 1;
-    grid[(y+1)%height][(x+2)%width] = 1;
-    grid[(y+4)%height][(x+2)%width] = 1;
-    grid[(y+3)%height][(x+3)%width] = 1;
-    grid[(y+4)%height][(x+3)%width] = 1;
-    grid[(y+5)%height][(x+3)%width] = 1;
+    
+    int randx = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+    int randy = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+
+    grid[(y+1*randy)%height][(x)%width] = 1;
+    grid[(y+3*randy)%height][(x)%width] = 1;
+    grid[(y)%height][(x+1*randx)%width] = 1;
+    grid[(y+1*randy)%height][(x+2*randx)%width] = 1;
+    grid[(y+4*randy)%height][(x+2*randx)%width] = 1;
+    grid[(y+3*randy)%height][(x+3*randx)%width] = 1;
+    grid[(y+4*randy)%height][(x+3*randx)%width] = 1;
+    grid[(y+5*randy)%height][(x+3*randx)%width] = 1;
 
 
     return grid;
@@ -72,16 +80,20 @@ int8_t ** addPuffer1(int8_t **grid, int height, int width, int y, int x){
 
 int8_t ** addPuffer2(int8_t **grid, int height, int width, int y, int x){
 
-    grid[(y+5)%height][(x+0)%width] = 1;
-    grid[(y+4)%height][(x+2)%width] = 1;
-    grid[(y+5)%height][(x+2)%width] = 1;
-    grid[(y+1)%height][(x+4)%width] = 1;
-    grid[(y+2)%height][(x+4)%width] = 1;
-    grid[(y+3)%height][(x+4)%width] = 1;
-    grid[(y+0)%height][(x+6)%width] = 1;
-    grid[(y+1)%height][(x+6)%width] = 1;
-    grid[(y+2)%height][(x+6)%width] = 1;
-    grid[(y+1)%height][(x+7)%width] = 1;
+    
+    int randx = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+    int randy = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+
+    grid[(y+5*randy)%height][(x)%width] = 1;
+    grid[(y+4*randy)%height][(x+2*randx)%width] = 1;
+    grid[(y+5*randy)%height][(x+2*randx)%width] = 1;
+    grid[(y+1*randy)%height][(x+4*randx)%width] = 1;
+    grid[(y+2*randy)%height][(x+4*randx)%width] = 1;
+    grid[(y+3*randy)%height][(x+4*randx)%width] = 1;
+    grid[(y)%height][(x+6*randx)%width] = 1;
+    grid[(y+1*randy)%height][(x+6*randx)%width] = 1;
+    grid[(y+2*randy)%height][(x+6*randx)%width] = 1;
+    grid[(y+1*randy)%height][(x+7*randx)%width] = 1;
 
 
 
@@ -90,57 +102,64 @@ int8_t ** addPuffer2(int8_t **grid, int height, int width, int y, int x){
 
 int8_t ** addPuffer3(int8_t **grid, int height, int width, int y, int x){
 
-    grid[(y+0)%height][(x+0)%width] = 1;
-    grid[(y+1)%height][(x+0)%width] = 1;
-    grid[(y+4)%height][(x+0)%width] = 1;
-    grid[(y+0)%height][(x+1)%width] = 1;
-    grid[(y+3)%height][(x+1)%width] = 1;
-    grid[(y+0)%height][(x+2)%width] = 1;
-    grid[(y+3)%height][(x+2)%width] = 1;
-    grid[(y+4)%height][(x+2)%width] = 1;
-    grid[(y+2)%height][(x+3)%width] = 1;
-    grid[(y+0)%height][(x+4)%width] = 1;
-    grid[(y+2)%height][(x+4)%width] = 1;
-    grid[(y+3)%height][(x+4)%width] = 1;
-    grid[(y+4)%height][(x+4)%width] = 1;
+    
+    int randx = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+    int randy = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
+
+    grid[(y)%height][(x)%width] = 1;
+    grid[(y+1*randy)%height][(x)%width] = 1;
+    grid[(y+4*randy)%height][(x)%width] = 1;
+    grid[(y)%height][(x+1*randx)%width] = 1;
+    grid[(y+3*randy)%height][(x+1*randx)%width] = 1;
+    grid[(y)%height][(x+2*randx)%width] = 1;
+    grid[(y+3*randy)%height][(x+2*randx)%width] = 1;
+    grid[(y+4*randy)%height][(x+2*randx)%width] = 1;
+    grid[(y+2*randy)%height][(x+3*randx)%width] = 1;
+    grid[(y*randy)%height][(x+4*randx)%width] = 1;
+    grid[(y+2*randy)%height][(x+4*randx)%width] = 1;
+    grid[(y+3*randy)%height][(x+4*randx)%width] = 1;
+    grid[(y+4*randy)%height][(x+4*randx)%width] = 1;
 
     return grid;
 }
 
 int8_t ** addPuffer4(int8_t **grid, int height, int width, int y, int x){
 
-    grid[y][(x+0)%width] = 1;
-    grid[y][(x+1)%width] = 1;
-    grid[y][(x+2)%width] = 1;
-    grid[y][(x+3)%width] = 1;
-    grid[y][(x+4)%width] = 1;
-    grid[y][(x+5)%width] = 1;
-    grid[y][(x+6)%width] = 1;
-    grid[y][(x+7)%width] = 1;
+    
+    int randx = (int) (rand() / (double)RAND_MAX * 2) == 0 ? 1 : -1;
 
-    grid[y][(x+9)%width] = 1;
-    grid[y][(x+10)%width] = 1;
-    grid[y][(x+11)%width] = 1;
-    grid[y][(x+12)%width] = 1;
-    grid[y][(x+13)%width] = 1;
+    grid[y][(x)%width] = 1;
+    grid[y][(x+1*randx)%width] = 1;
+    grid[y][(x+2*randx)%width] = 1;
+    grid[y][(x+3*randx)%width] = 1;
+    grid[y][(x+4*randx)%width] = 1;
+    grid[y][(x+5*randx)%width] = 1;
+    grid[y][(x+6*randx)%width] = 1;
+    grid[y][(x+7*randx)%width] = 1;
 
-    grid[y][(x+17)%width] = 1;
-    grid[y][(x+18)%width] = 1;
-    grid[y][(x+19)%width] = 1;
+    grid[y][(x+9*randx)%width] = 1;
+    grid[y][(x+10*randx)%width] = 1;
+    grid[y][(x+11*randx)%width] = 1;
+    grid[y][(x+12*randx)%width] = 1;
+    grid[y][(x+13*randx)%width] = 1;
 
-    grid[y][(x+26)%width] = 1;
-    grid[y][(x+27)%width] = 1;
-    grid[y][(x+28)%width] = 1;
-    grid[y][(x+29)%width] = 1;
-    grid[y][(x+30)%width] = 1;
-    grid[y][(x+31)%width] = 1;
-    grid[y][(x+32)%width] = 1;
+    grid[y][(x+17*randx)%width] = 1;
+    grid[y][(x+18*randx)%width] = 1;
+    grid[y][(x+19*randx)%width] = 1;
 
-    grid[y][(x+34)%width] = 1;
-    grid[y][(x+35)%width] = 1;
-    grid[y][(x+36)%width] = 1;
-    grid[y][(x+37)%width] = 1;
-    grid[y][(x+38)%width] = 1;
+    grid[y][(x+26*randx)%width] = 1;
+    grid[y][(x+27*randx)%width] = 1;
+    grid[y][(x+28*randx)%width] = 1;
+    grid[y][(x+29*randx)%width] = 1;
+    grid[y][(x+30*randx)%width] = 1;
+    grid[y][(x+31*randx)%width] = 1;
+    grid[y][(x+32*randx)%width] = 1;
+
+    grid[y][(x+34*randx)%width] = 1;
+    grid[y][(x+35*randx)%width] = 1;
+    grid[y][(x+36*randx)%width] = 1;
+    grid[y][(x+37*randx)%width] = 1;
+    grid[y][(x+38*randx)%width] = 1;
 
 
 
@@ -248,22 +267,15 @@ int main (int argc, char *argv[]) {
     srand((unsigned int) time(NULL)); // initialisation de rand
 
     /** HYPERPARAMETERS **/
-    int zoom = (int) (rand() / (double)RAND_MAX * 16);
-    #define ZOOM zoom==0?1:zoom //assert ZOOM != 0
-    #define NCOLORS 2
-    #define NOISE 300//10 //assert NOISE != -1
-    #define MEMORY 600
-    #define HALF_STEP ZOOM>=5?1:0
-
+#define ZOOM 1 //assert ZOOM != 0
+#define NCOLORS 2
+#define NOISE 250//10 //assert NOISE != -1
+#define MEMORY 800
+#define HALF_STEP 0
 
     /*** INITIALIZATION ***/
     int screenWidth = 850;
     int screenHeight = 650;
-
-    int widthOffset = (screenWidth%ZOOM)/2;
-    int heightOffset = (screenHeight%ZOOM)/2;
-
-
 
     Display *dpy;
     Window window;
@@ -343,20 +355,16 @@ int main (int argc, char *argv[]) {
     double_buffer = XCreatePixmap(dpy, window, (unsigned int) wa.width, (unsigned int) wa.height, (unsigned int) wa.depth);
 
 
+    addPentominoR(grid, height, width, 300, 400);
+
     while(1){
         for(y=0; y<height; y++) {
             for(x=0; x<width; x++) {
-                int y2, x2;
-                for(y2=y*ZOOM+heightOffset; y2<(y + 1)*ZOOM+heightOffset; y2++){
-                    for(x2=x*ZOOM+widthOffset; x2<(x + 1)*ZOOM+widthOffset; x2++){
-                        XDrawPoint(dpy, double_buffer, gColors[(int)grid[y][x]], x2, y2);
-                    }
-                }
+                XDrawPoint(dpy, double_buffer, gColors[(int)grid[y][x]], x, y);
             }
         }
 
         grid = updateGrid(grid, memoryGrid, height, width, NOISE, MEMORY);
-        if(HALF_STEP == 1) grid = updateGrid(grid, memoryGrid, height, width, NOISE, MEMORY);
 
         /* copy the buffer to the window */
         XCopyArea(dpy, double_buffer, window, gColors[1],0, 0, (unsigned int) wa.width, (unsigned int) wa.height, 0, 0);
