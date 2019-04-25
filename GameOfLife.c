@@ -228,17 +228,17 @@ int8_t ** updateGrid(int8_t ** grid, int16_t ** memoryGrid, int height, int widt
             addPuffer1(grid, height, width, (int) (rand() / (double)RAND_MAX * height),
                        (int) (rand() / (double)RAND_MAX * width));
             break;
-        case 5:
-            addPuffer2(grid, height, width, (int) (rand() / (double)RAND_MAX * height),
-                       (int) (rand() / (double)RAND_MAX * width));
-            break;
-        case 6:
-            addPuffer3(grid, height, width, (int) (rand() / (double)RAND_MAX * height),
-                       (int) (rand() / (double)RAND_MAX * width));
-            break;
-        case 7:
-            addPuffer4(grid, height, width, (int) (rand() / (double)RAND_MAX * height),
-                       (int) (rand() / (double)RAND_MAX * width));
+//        case 5:
+//            addPuffer2(grid, height, width, (int) (rand() / (double)RAND_MAX * height),
+//                       (int) (rand() / (double)RAND_MAX * width));
+//            break;
+//        case 6:
+//            addPuffer3(grid, height, width, (int) (rand() / (double)RAND_MAX * height),
+//                       (int) (rand() / (double)RAND_MAX * width));
+//            break;
+//        case 7:
+//            addPuffer4(grid, height, width, (int) (rand() / (double)RAND_MAX * height),
+//                       (int) (rand() / (double)RAND_MAX * width));
             break;
     }
 
@@ -258,7 +258,6 @@ int8_t ** updateGrid(int8_t ** grid, int16_t ** memoryGrid, int height, int widt
  * - Finir de trouver tous les hyperparamètres
  * - Trouver la bonne taille de block pour qu'il n'y ait pas un ligne noir en bas et à droite
  * - Créer un .xml pour le xscreensaver
- * - Push sur mon git perso
  */
 
 
@@ -353,9 +352,6 @@ int main (int argc, char *argv[]) {
 
     /* create and clear the double buffer */
     double_buffer = XCreatePixmap(dpy, window, (unsigned int) wa.width, (unsigned int) wa.height, (unsigned int) wa.depth);
-
-
-    addPentominoR(grid, height, width, 300, 400);
 
     while(1){
         for(y=0; y<height; y++) {
