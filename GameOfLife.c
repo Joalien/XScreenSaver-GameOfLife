@@ -250,7 +250,7 @@ int main (int argc, char *argv[]) {
     /** HYPERPARAMETERS **/
     int zoom = (int) (rand() / (double)RAND_MAX * 16);
     #define ZOOM zoom==0?1:zoom //assert ZOOM != 0
-    #define NCOLORS 2
+    #define NCOLORS 3
     #define NOISE 300//10 //assert NOISE != -1
     #define MEMORY 600
     #define HALF_STEP ZOOM>=5?1:0
@@ -271,7 +271,7 @@ int main (int argc, char *argv[]) {
     Pixmap double_buffer;
     XEvent e, xev;
     XWindowAttributes wa;
-    char *colors[NCOLORS] = {"black", "white"};
+    char *colors[NCOLORS] = {"black", "white", "grey"};
     XColor xColors[NCOLORS];
     XColor xc, sc;
     int c, x, y;
